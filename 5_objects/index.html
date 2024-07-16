@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Objects</title>
+
+          <script>
+                    let myObj = {
+                              name : "Nimal",
+                              age : 35,
+                              sayhi : function(){
+                                        console.log("Hi..my name is " + this.name);
+                                        console.log("and my age is " + this.age);
+                              }
+                    }
+
+                    /*
+                    myObj.sayhi();
+                    console.log(myObj.name);
+
+                    myObj.age = 36;
+                    console.log(myObj.age);
+
+                    myObj.school = "walasmulla";
+                    console.log(myObj.school);
+
+                    myObj.eat = function(){
+                              console.log("eating");
+                    }
+
+                    myObj.eat();
+                    
+                    
+                    delete myObj.name;
+                    console.log(myObj);
+                    */
+
+                    //myObj.sayhi();
+
+                    console.log(Object.keys(myObj));
+                    console.log(Object.values(myObj));
+                    console.log(Object.entries(myObj));
+
+
+                    let myObj2 = {
+                              address : "suwasetha, karametiya, kirama"
+                    };
+
+                    Object.assign(myObj2,myObj);
+                    console.log(myObj2);
+
+          </script>
+
+
+</head>
+<body>
+          <h1>Objects</h1>
+          
+</body>
+</html>
