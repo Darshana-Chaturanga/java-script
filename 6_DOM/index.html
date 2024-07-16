@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>DOM</title>
+
+          <style>
+                    .textGreen{
+                         font-weight: 700;     
+                         color: green;
+                    }
+          </style>
+
+
+</head>
+<body>
+          <h1 id = "heading">DOM</h1>
+
+          <p id="txt1" class = "para">Sample text 1</p>
+          <p id="txt2" class = "para" filter = "f1">Sample text 2</p>
+          <div id="div1" style="width: 100px; height: 100px; background-color: blue;"></div>
+
+          <button id="btn"> press me </button>
+
+
+          
+
+          <script>
+                    let element1 = document.getElementById("txt1");
+                    //console.log(element1);
+
+                    let p = document.getElementsByClassName("para");
+                    p[0].innerHTML = "bbbbdfdf";
+
+                    let k = document.getElementsByTagName("p");
+                    console.log(k);
+
+                    document.getElementById("txt2").filter = "f2";
+
+                    element1.classList.add("textGreen");
+                    //element1.classList.remove("textGreen");
+
+                    document.getElementById("div1").innerHTML = document.createElement();
+
+          </script>
+</body>
+</html>
