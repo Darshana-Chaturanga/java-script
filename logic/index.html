@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>logic</title>
+</head>
+<body>
+          <label for="input1">input 1 : </label>
+          <input type="text" id="input1">
+          <br><br>
+          <label for="input2">input 2 :</label>
+          <input type="text" id="input2">
+          <br><br>
+          <button onclick="compair()">compair</button>
+          <br><br>
+          <div id="result"></div>
+
+          <script>
+                    function compair(){
+                              let val1 = document.getElementById("input1").value;
+                              val1 = Number(val1);
+
+                              let val2 = document.getElementById("input2").value;
+                              val2 = Number(val2);
+
+                              let res = document.getElementById("result");
+
+                              if(val1 == val2){
+                                        res.innerHTML = "val1 == val2 <br>";
+                              }
+                              
+                              if(val1 === val2){
+                                        res.innerHTML += "val1 === val2";
+                              }
+                              
+                    }
+          </script>
+          
+</body>
+</html>
