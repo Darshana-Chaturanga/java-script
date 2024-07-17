@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+         <h1>conditions</h1> 
+         Age : 
+         <input type="text" id="myinput">
+         <button onclick="checkInput()"> Click me </button>
+         <br>
+         <br>
+         District :
+         <select name="district" id="myselect">
+                    <option value="Rathnapura">Rathnapura</option>
+                    <option value="Galle">Galle</option>
+                    <option value="Colombo">Colombo</option>
+                    <option value="Matara">Matara</option>
+         </select>
+         <button onclick="checkDistrict()"> Click me </button>
+         <br>
+         <br>
+         <p id="agepara">your age is </p>
+         <p id="dictpara">your district is </p>
+
+         <script>
+                    function checkInput(){
+                              let para = document.getElementById("agepara");
+                              let age = document.getElementById("myinput").value;
+                              age = age == "" ? 0 : age;
+                              console.log(age);
+
+                              if(parseInt(age) >= 18){
+                                     para.innerHTML = para.innerHTML + age;   
+                              }
+                              
+                    }
+                    function checkDistrict(){
+                              let dict = document.getElementById("dictpara");
+                              let district = document.getElementById("myselect").value;
+
+                              switch (district){
+                                        case "Rathnapura" :
+                                                  dict.innerHTML += district;
+                                                  break
+                                        case "Galle" :
+                                                  dict.innerHTML += district;
+                                                  break
+                                        case "Colombo" :
+                                                  dict.innerHTML += district;
+                                                  break
+                                        case "Matara" :
+                                                  dict.innerHTML += district;
+                                                  break
+                                        default :
+                                                  dict.innerHTML += "no one";
+                              } 
+
+                    }
+
+
+         </script>
+</body>
+</html>
