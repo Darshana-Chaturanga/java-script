@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>loops</title>
+</head>
+<body>
+         <h1>loops & iterations</h1> 
+         <ul id="list">
+                <li>first item</li>
+         </ul>
+
+         <br><br>
+
+         <ul id="userList"></ul>
+
+         <script>
+                    let list = document.getElementById("list");
+                    
+
+                    for(let i = 0; i<5; i++){
+                              let li = document.createElement('li');
+                              let text = document.createTextNode("test txt " + i);
+                              li.appendChild(text);
+                              list.appendChild(li);    
+                    }
+
+                    let x= 100;
+                    while(x<=110){
+                              let li = document.createElement('li');
+                              let text = document.createTextNode("test txt " + x);
+                              li.appendChild(text);
+                              list.appendChild(li);
+                              x++;
+                    }
+
+                    // for in loop (can use array / objects). only get indexes or keys
+                    let user = {
+                            name : "Darshana",
+                            age : 30,
+                            town : "Karamaetiya"
+                    }
+                    let listUser = document.getElementById("userList");
+                    
+
+                    for (const data in user) {
+                            //console.log(user[data]);
+                            let liUser = document.createElement('li');
+                            let txt = document.createTextNode(data +" : " + user[data]);
+                            liUser.appendChild(txt);
+                            listUser.appendChild(liUser);
+                    }
+                    
+                    // for of loop(can use in array). can get element
+
+                    let myarray = ["Nimal", "Kamal", "Amara", "Nayana"];
+                    for(const n of myarray){
+                            console.log(n);
+                    }
+
+                    // second example of for of
+                    let users = [
+                     {name : "Darshaha", age : 12},
+                     {name : "Lasith", age : 22},
+                     {name : "Thisara", age : 11}
+                    ];
+
+                    let userNames = [];
+
+                    for (const k of users){
+                            userNames.push(k.name);
+                    }
+                    console.log(userNames);
+
+                    // map (easy way)
+                    let userAges = users.map(function(x){
+                            return x.age;
+                    });
+                    console.log(userAges);
+
+                    // filter (easy way)
+                    let filtered = users.filter(function(y){
+                            return y.age > 12;   // give true or false
+                    });
+                    console.log(filtered);
+
+                    
+         </script>
+</body>
+</html>
