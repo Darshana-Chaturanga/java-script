@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>event listeners</title>
+</head>
+<body>
+          <button onclick="runMe()">click me</button>
+          <br><br>
+          <button onclick="console.log('inline js')">click me</button>
+          <br><br>
+          <button id="btn1">click me</button>
+
+          <br><br>
+          <button id="btn2">check direct function</button>
+          <br><br>
+          <input type="text" id="input">
+
+          <script>
+                    function runMe(){
+                              console.log("run me");
+                    }
+
+                    let button1 = document.getElementById("btn1");
+                    button1.addEventListener("click",runMe);
+
+                    // ----------------------------------------------------------
+
+                    let button2 = document.getElementById("btn2");
+                    button2.addEventListener("click",function(){
+                              console.log("direct function")
+                    });
+                    button2.addEventListener("dblclick",function(){   // add any numbers of events
+                              console.log("double click function")
+                    });
+
+                    //input change
+                    document.getElementById("input").addEventListener("change",function(){
+                              console.log("input changed");
+                    });
+
+                    document.getElementById("input").addEventListener("keyup",function(e){  // can add event object as a parameter to the function
+                              
+                              if(e.key == "k"){
+                                        e.preventDefault();  // disable defaut
+                              }else{
+                                        console.log("input changed(key up)");      
+                                        console.log(e);
+                                        console.log(e.key);      
+                              }
+                              
+                    });
+
+                    // add events for window obj
+                    window.addEventListener("resize",function(e){
+                              console.log(e);
+                    });
+                    
+                    
+
+          </script>
+          
+</body>
+</html>
