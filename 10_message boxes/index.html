@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          <h1>Message boxes</h1>
+          <br>
+          <button onclick="showAlert()">Alert</button>
+          <br>
+          <button onclick="showPrompt()">Prompt</button>
+          <br>
+          <button onclick="showConfirm()">Confirm</button>
+          <br><br>
+          <div id="op">Out put</div>
+
+          <script>
+                    function showAlert(){
+                              alert("This is a alert !");
+                              console.log("say hi !");
+                    }
+
+                    function showPrompt(){
+                              let input = prompt("what is your name ?");
+                              console.log("hi ," + input);
+                    }
+
+                    function showConfirm(){
+                              let isOk = confirm("are you sure ?");
+                              console.log(isOk);
+                              if(isOk){
+                                        document.getElementById("op").innerHTML = "Approved";
+                              }else{
+                                        document.getElementById("op").innerHTML = "Not Approved";
+
+                              }
+                    }
+          </script>
+          
+</body>
+</html>
