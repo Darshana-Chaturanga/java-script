@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          <button id="button1">Start animation</button>
+          <button id="button2">Stop animation</button>
+
+          <p id="output">Output</p>
+
+          <script>
+                    let button1 = document.getElementById("button1");
+                    let button2 = document.getElementById("button2");
+                    let output = document.getElementById("output");
+
+                    let left = 1;
+
+                    let process;
+
+                    function startAnimation(){
+                              process = setInterval(function(){
+                                   left += 10;
+                                   output.style.marginLeft = left + "px";     
+                              }, 1000);
+                    }
+
+                    button1.onclick = startAnimation;
+
+                    // stop animation
+
+                    function stopAnimation(){
+                              console.log("stop animation");
+                              clearInterval(process);
+                              output.style.marginLeft =  "0px";
+                              left = 1;
+                    }
+
+                    button2.onclick = stopAnimation;
+
+          </script>
+</body>
+</html>
