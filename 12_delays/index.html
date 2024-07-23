@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+        <button id="button1">Genarate</button>  
+        <button id="button2">clear</button>  
+        <p id="para">tyfdytfyt</p>
+
+
+        <script>
+                    let para = document.getElementById("para");
+                    let button1 = document.getElementById("button1");
+                    
+                    button1.onclick = genarate;
+
+                    function genarate(){
+                              console.log("pressed")
+                              setTimeout(function(){
+                                        para.innerHTML = "pressed";
+                              }, 2000);
+                    }
+
+                    // for second btn. different way
+
+                    let button2 = document.getElementById("button2");
+                    button2.onclick = clear;
+
+                    function clear(){
+                        para.innerHTML = "";
+                    }
+
+                    setTimeout(clear(), 5000);
+
+        </script>
+</body>
+</html>
