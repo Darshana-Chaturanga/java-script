@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          <div id="dataHolder"></div>
+          <ul id="list"></ul>
+
+          <script>
+                    const dataHolder = document.querySelector("#dataHolder");
+                    const list = document.getElementById("list");
+
+                    let url = "https://jsonplaceholder.typicode.com/posts";
+
+                    fetch(url,{
+                              method : 'GET'      // search "js fetch API" for more details
+                    })
+                    .then(function (response){
+                              return response.json();
+                    })
+                    .then((data)=>{
+                              console.log(data);
+                              data.forEach((element) => {
+                                      let li = document.createElement("li") ;
+                                      li.innerHTML = element.title;
+                                      li.addEventListener("click", () => {
+                                                lodeData(element.id);
+                                      });
+                                      list.appendChild(li);
+                              });
+                    });
+
+                    function lodeData(id){
+                        fetch(url + "/" + id,{
+                                method : 'GET'
+                        })
+                        .then((response) => response.json())
+                        .then((relatedData) => {
+                                console.log(relatedData);
+                                dataHolder.innerHTML = "<b>" +relatedData.title + "<b>" + "<br>";
+                                dataHolder.innerHTML += relatedData.body + "<br><br>";
+                        });
+                    }
+
+          </script>
+</body>
+</html>
