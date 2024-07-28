@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          <h1>Fetch data from web</h1>
+          <p id="output"></p>
+          <button onclick="getDataMethod1()">Get data method 1</button>  
+          <button onclick="getDataFetch()">Get data fetch</button> 
+
+          <script>
+                    output = document.getElementById("output");
+
+                    //first method
+                    function getDataMethod1(){
+                              console.log("get data");
+
+                              let xhttp = new XMLHttpRequest();
+                              xhttp.onreadystatechange = function(){
+                                        if (this.readyState == 4 && this.status == 200) {
+                                                  console.log(xhttp.responseText);
+                                        }
+                              }
+                              xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+                              xhttp.send();
+                                        
+                    }
+
+                    //second method (using Fetch API). search Json placeholder
+                    function getDataFetch(){
+                              fetch('https://jsonplaceholder.typicode.com/todos/1')
+                              //.then(response => response.json())                     
+                              //.then(json => console.log(json))
+                              .then(function(response){
+                                        return response.json();
+                              })
+                              .then(function(data){
+                                        console.log(data);
+                                        output.innerHTML = data.title;
+
+                              })
+                              
+                    }
+
+
+          </script>
+</body>
+</html>
