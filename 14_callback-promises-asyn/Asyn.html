@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function toDoes(){
+      fetch("https://jsonplaceholder.typicode.com/todos")
+      .then((resource) => resource.json())
+      .then((todoes) => {
+        console.log(todoes);
+        todoes.forEach(element => {
+          fetch("https://jsonplaceholder.typicode.com/todos/" + element.id)
+          .then((todo) => todo.json())
+          .then((data) => console.log(data));
+        });
+      });
+
+      console.log("normal fetch");  // may be this will print before the above fetch complete (may be threades)
+    }
+
+    async function getDataAsync() {
+      let res = await fetch("https://jsonplaceholder.typicode.com/todos"); // await can only used inside async function
+      // code no longer move forward until above code is finish
+      res = await res.json();
+      console.log(res);
+      res.forEach(async function (todo) {
+        let resource = await fetch("https://jsonplaceholder.typicode.com/todos/" + todo.id);
+        resource = await resource.json();
+        console.log(resource);
+      })
+    }
+  </script>
+  
+</body>
+</html>

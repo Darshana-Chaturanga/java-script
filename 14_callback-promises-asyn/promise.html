@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+          
+</head>
+<body>
+          <input type="checkbox" name="myCheck" id="myCheck" checked >
+      <script>
+          
+          function myFunction(){
+            const myPromise = new Promise(function(resolve, reject){
+                // do something
+               let output;
+
+               if( document.getElementById("myCheck").checked){
+                   output = "ok";
+                   resolve(output);
+               }else{
+                   output = "fail";
+                   reject(output);  
+               }
+            });
+            return myPromise;
+
+          }
+
+          // call the promise
+          myFunction().then(function(data){
+            console.log(data);
+          }).catch(function(data){
+            console.log(data);
+          });
+          
+      </script>
+
+</body>
+</html>

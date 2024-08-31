@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          <p id="display"></p>
+          <br>
+          <button id="myBtn">click</button>
+          <br><br>
+          <button id="myBtn2">click</button>
+
+
+          <script>
+              function greeting(name){
+                    console.log("Hello.." + name);
+              }
+
+              function procesUserInput(callback){            // can give any name ex:- callback, callthis
+                    let name = prompt("Enter your name...");
+                    callback(name);
+              }
+
+              procesUserInput(greeting);   // can give pre defined function or can create one
+
+              procesUserInput(function (para){    // crate a function
+                    document.getElementById("display").innerHTML = "hello.." + para;
+              });
+
+              document.getElementById("myBtn").addEventListener("click",greeting);  // can give pre defined function
+              
+              document.getElementById("myBtn2").addEventListener("click",function(){
+                    procesUserInput(greeting);
+              });
+          </script>
+          
+</body>
+</html>
