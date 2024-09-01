@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oop</title>
+</head>
+<body>
+  <script>
+    let person1 = {
+      name : "Nimal",
+      age : 30,
+      address : "Karamatiya",
+
+      subjects : ['Maths','Science','Art'],
+      school : {
+        name : 'Walasmulla MV',
+        tel : '0123234356',
+        address : "Walasmulla"
+      },
+      sayHi : function (name){
+        console.log('Hello ' + name);
+      } 
+    }
+
+    // create a constructor function
+    function person(name, age, addr){
+      this.name = name;
+      this.age = age;
+      this.address = addr;
+      this.sayHi = function (){
+        console.log('Hello ' + this.name);
+      }
+    }
+
+    let person2 = new person("Darshana", 20, "walasmulla");
+    let person3 = new person("Kamal", 23, "Matara");
+
+    // check the prototype
+    console.log(person2.__proto__);
+
+    // we can add more attributes/methods to any object without changing its const.function
+    person2.sayHello = function(){
+      console.log("Hello.. I'm " + this.name);
+    }
+
+    person2.sayHello();
+
+    // if we want to add another function to prototype without changing its const.function
+    person.prototype.sayHooo = function(){
+      console.log("Hooo.." + this.name);
+    }
+
+    person3.sayHooo = function(){ //this will override the default
+      console.log("Hooooooooooooooooooooooooooo");
+    }
+    person3.sayHooo();
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //check how call function work...
+    //first we create two objects
+
+    const student1 = {
+      fullName : function(start, end){
+        console.log(start+ " " + this.firstName + " " + this.lastName +" " + end);
+      }
+    }
+
+    const student2 = {
+      firstName : "Nimal",
+      lastName : "Kumara"
+    }
+
+    //try the call(). call the fullName fun of st1 with the data of st2 
+    student1.fullName.call(student2, "--**" , "**--");  //give 2 para after the refering object
+    
+    //try the apply(). only deff is the array
+    student1.fullName.apply(student2, ["--$$" , "$$--"]);  //give 2 para after the refering object
+
+    //try bind(). we should call this function. otherwise it will not active
+    let myfunction = student1.fullName.bind(student2, "--@@" , "@@--");
+    myfunction();
+  </script>
+  
+</body>
+</html>
