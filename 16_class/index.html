@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Person {
+      constructor(name, age, hobbies){
+        this.name = name;
+        this.age = age;
+        this.hobbies = hobbies;
+      }
+      // create a function
+      showInfo(){
+        console.log(`${this.name} is ${this.age} years old`);
+      }  
+    }
+
+    // create a person
+    const person1 = new Person("Kaml", 20, ["Reading", "Writing", "Music"]);
+
+    person1.showInfo();
+
+    //////////////////////////////////////////////////////////////////////
+    
+    //inheritance
+
+    class Student extends Person{
+      // method overriding
+      showInfo(){ 
+        console.log("I'm a Student. My name is " + this.name + " and " + this.age + " years old.");
+      }
+
+      showHobbies(){
+        console.log(this.hobbies);
+      }
+      //create static method
+      static sayHi(){
+        console.log("Hi everyone..");
+      }
+    }
+
+    const Sumith = new Student("Sumith", 22, ["Swiming", "Tv", "Radio"]);
+
+    Sumith.showInfo();
+    Sumith.showHobbies();
+    Student.sayHi();
+
+
+
+  </script>
+  
+</body>
+</html>
