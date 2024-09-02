@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Person {
+      constructor(name, age, hobbies){
+        this.name = name;
+        this.age = age;
+        this.hobbies = hobbies;
+      }
+      // create a function
+      showInfo(){
+        console.log(`${this.name} is ${this.age} years old`);
+      }  
+    }
+
+    
+    //inheritance
+
+    class Student extends Person{
+
+      constructor(name, age, hobbies, school){
+        super(name,age,hobbies);
+        this.school = school;
+      }
+
+      // method overriding
+      showInfo(){ 
+        console.log("I'm a Student. My name is " + this._name + " and " + this._age + " years old.");
+      }
+
+      showHobbies(){
+        console.log(this.hobbies);
+      }
+      //create static method
+      static sayHi(){
+        console.log("Hi everyone..");
+      }
+      //getters
+      get name(){
+        return "my name is " + this._name;  // _name reffer the attribut/variable. this.name mean the function 
+      }
+      get age(){
+        return false;
+      }
+      //setters
+      set name(input){
+        this._name = input;
+      }
+      set age(input){
+        this._age = input;
+      }
+    }
+
+    const Sumith = new Student("Sumith", 22, ["Swiming", "Tv", "Radio"],"Katuwana MV");
+
+    console.log(Sumith.name);
+    console.log(Sumith.age);
+
+
+
+  </script>
+  
+</body>
+</html>
