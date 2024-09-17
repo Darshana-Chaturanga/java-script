@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur delectus necessitatibus aliquid nulla perferendis ipsam esse consectetur eveniet fugiat laudantium ratione blanditiis ducimus tempora repellat nemo a, voluptatibus quod veritatis.</p>
+  <script>
+
+    //q5
+    // myPara = document.getElementById("para").addEventListener("click", () => {
+    //   console.log('working');
+    //   document.getElementById("para").style.color = "red";
+    // });
+
+    //q6
+    const students = [
+      {name: 'John', score: 90, school: 'East'},
+      {name: 'Susan', score: 85, school: 'East'},
+      {name: 'Bob', score: 85, school: 'West'},
+      {name: 'Jane', score: 95, school: 'East'},
+    ];
+
+    const topStudents = students.filter((student) => student.score <= 90);
+    console.log(topStudents);
+
+    // let newStudents = [] ;
+
+    // students.forEach(element => {
+    //   if(element.score >= 90){
+    //     newStudents.push(element);
+    //   }
+    // });
+
+    // console.log(newStudents);
+    
+
+  </script>
+  
+</body>
+</html>
