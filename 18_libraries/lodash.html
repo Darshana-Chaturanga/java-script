@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <!--add lodash library--> 
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
+</head>
+<body>
+  <h2>lodash library</h2>
+
+  <script>
+      const myArray = [2,4,7,3,9,1];
+
+      // sum from lodash lib
+      console.log(_.sum(myArray));
+
+      //random num
+      console.log(_.random(100,200));
+
+      // random object
+      const names = ["Nimal", "Kamal", "Sunil", "Amara","Nayana"];
+      console.log(_.sample(names));
+  </script>
+
+</body>
+</html>
