@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="mylib.js"></script>
+</head>
+<body>
+  <div id="id1">
+    sample txt
+  </div>
+
+  <ul id="myList">
+    <li>One</li>
+  </ul>
+
+  <input id="myInput" type="text">
+
+  <script>
+    console.log(inHTML("#id1","This is a change"));
+    addList("#myList", "Two");
+
+    addEvent("#myInput", 'keyup', (e)=> console.log(e));
+  </script>
+  
+</body>
+</html>
