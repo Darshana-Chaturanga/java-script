@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    canvas{
+      background-color: rgb(161, 161, 161);
+    }
+  </style>
+
+</head>
+<body>
+
+  <canvas id="canves" width="500px" height="500px"></canvas>
+
+  <script>
+    var canvas = document.getElementById("canves");
+    var ctx = canves.getContext("2d");
+
+    class Block{
+      constructor(color, x, y, w, h){
+        this.color = color;
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+
+        this.speedx = 0;
+        this.speedy = 0;
+      }
+
+      draw(){
+
+        if((this.speedx > 0 && this.x < 400) || (this.speedx < 0 && this.x > 0)){
+          this.x += this.speedx;
+        } 
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x,this.y,this.w, this.h); // (x,y,w,h)
+      }
+
+    }
+
+    var fps = 30;
+
+    const b1 = new Block("red",0, 480, 100,20 );
+
+    const timer = setInterval(()=>{
+      //clear canvas
+      ctx.clearRect(0,0,500,500); // (0,0) to (400,400)
+
+      //b1.speedx = 5;
+      b1.draw();
+    },1000/fps);
+
+    document.addEventListener("keydown", (e)=>{
+      // console.log(e.key);
+      if(e.key == "ArrowRight"){
+        b1.speedx = 5;
+      }else if(e.key == "ArrowLeft"){
+        b1.speedx = -5;
+      }else{
+        b1.speedx = 0;
+      }
+    });
+
+    document.addEventListener("keyup", (e)=>{
+      // console.log(e.key);
+      b1.speedx = 0;
+    });
+
+  </script>
+  
+</body>
+</html>

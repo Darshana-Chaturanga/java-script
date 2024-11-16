@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game animation</title>
+
+  <style>
+    canvas{
+      background-color: rgb(150, 150, 150);
+    }
+    getColor{
+      background-color: rgb(255, 63, 95);
+    }
+
+  </style>
+
+
+</head>
+<body>
+  <canvas id="canves" width="400px" height="400px"></canvas>
+
+  <script>
+    var canvas = document.getElementById("canves");
+    var ctx = canvas.getContext("2d");
+
+    //rectangle
+    ctx.fillStyle = "red";
+    ctx.fillRect(10,20,100,200);
+
+    ctx.fillStyle = "green";
+    ctx.fillRect(200,20,100,100);
+
+    //draw a line
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.lineTo(0, 100);
+
+    ctx.strokeStyle = "yellow";
+    ctx.stroke();
+
+    ctx.fillStyle = "brown";
+    ctx.fill();
+
+    //draw a circle
+    ctx.beginPath();
+    ctx.arc(200, 200, 30, 0, Math.PI*2, false); //(width, height, radius, xx, 2*pi, false)
+    ctx.fillStyle = "chartreuse";
+    ctx.fill();
+
+    // Text include
+    ctx.font = "30px  Arial";
+    ctx.fillStyle = "rgb(255, 63, 95)";
+    ctx.fillText("Hello", 250,250);
+
+    // Images
+    let img = new Image();
+    img.src = 'ball.png';
+    img.onload = function(){
+      ctx.drawImage(img, 200, 200, 200, 200);
+    }
+
+
+  </script>
+  
+</body>
+</html>
