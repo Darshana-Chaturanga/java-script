@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="myTxt"></p>
+
+  <script>
+    let name = "Darshana";
+    let age = 31;
+
+    function getHelloWorld(){
+      return "Hello world";
+    }
+
+    //let output = "My name is " + name + " and my age is " + age + " years old";
+    let output = `My name is ${name} and my age is ${age} years old. `;
+
+    //can include the clculation
+    output += `Next year, i'm ${age + 1} years old <br>`;
+
+    //can include the function
+    output += `This is function output : ${getHelloWorld()}`;
+
+
+    //document.getElementById("myTxt").textContent = output;  // we cant include html
+    document.getElementById("myTxt").innerHTML = output;  
+    
+  </script>
+</body>
+</html>
