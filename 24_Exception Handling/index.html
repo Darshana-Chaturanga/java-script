@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <input id="ip" type="text">
+  <button id="btn">Click</button>
+
+  <script>
+    console.log("Start");
+    const Btn = document.getElementById("btn");
+    const input = document.getElementById("ip");
+
+    Btn.addEventListener("click", ()=>{
+      try{
+      console.log(input.value);
+      }catch(e){
+      console.log(e);
+      }finally{
+        console.log("This runs enyway");
+      }
+    });
+    
+    
+
+    console.log("End");
+
+  </script>
+  
+</body>
+</html>
