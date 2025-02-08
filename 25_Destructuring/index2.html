@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // nested object destruction
+    const student = {
+      name : "Saman",
+      age : 22,
+      education : {
+        degree : "BSc",
+        school : "O/L A/L"
+      }
+    }
+
+    let{name : stName, age : stAge, education : stEducation} = student;
+
+    console.log(stName);
+    console.log(stAge);
+    console.log(stEducation);
+
+    let{name : sName, age : sAge, education : {school : sSchool}} = student;
+    console.log(sSchool);
+
+    //destruction in function
+    function myFunction({name,age}){
+      console.log(name, age);
+    }
+
+    myFunction(student);
+  </script>
+  
+</body>
+</html>
