@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    const myArray = ["Nimal", "Amal", "Kamal", "Nayana", "Supun"];
+
+    let name1 = myArray[0];
+    let name2 = myArray[1];
+    let name3 = myArray[2];
+
+    console.log(name1, name2, name3);
+
+    //easy way
+    let [na1, na2, na3] = myArray;
+    console.log(na1, na2, na3);
+
+  ////////////////////////////////////////////////////////////////////////////////////
+
+    numArray = [100,200,300,400];
+    let a,b,c,d,e ;
+    [a = 5, b = 6, c = 7,d = 8, e = 9] = numArray;
+    console.log(a,b,c,d,e);
+
+    ////////////////////////////////////////////////
+    
+    // easy swap
+    let x = 2;
+    let y = 3;
+
+    [x,y] = [y,x];
+
+    console.log(`x = ${x} , y = ${y}`);
+
+    ///////////////////////////////////////////////////////
+
+    //ignore some values
+    // const myArray = ["Nimal", "Amal", "Kamal", "Nayana", "Supun"];
+    let st1, st2;
+
+    [st1,,,st2] = myArray;
+    console.log(st1, st2);  //"Nimal", "Nayana"
+
+    ////////////////////////////
+
+    // object restructure
+
+    const myObj = {
+      name : "Nimal",
+      age : 25 ,
+      address : "Colombo",
+
+      sayHi : function (word){
+          console.log("Hi," + word)
+      }     
+    };
+    let {name : myName, address, age, sayHi} = myObj;  // order doesn't matter. name get as myName
+    console.log(myName,age,address);
+
+    sayHi("Darshana");
+
+
+  </script>
+  
+</body>
+</html>
