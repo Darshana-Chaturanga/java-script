@@ -1,0 +1,40 @@
+.class1{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.class2{
+  width: 100px;
+  height: 100px;
+  background-color:rgb(14, 122, 41);
+}
+.class3{
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+}
+.btn-container{
+  padding: 48px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.hidden{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

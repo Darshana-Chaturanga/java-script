@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manipulating CSS</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body>
+  <h1>Manipulating CSS</h1>
+  <input type="number" id="val">
+  <input type="color" id="col"><br>
+  <select name="select class" id="clz">
+    <option value="class1">class1</option>
+    <option value="class2">class2</option>
+    <option value="class3">class3</option>
+  </select>
+  <hr>
+  <div class="btn-container">
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+  </div><hr>
+  <div id="box" class="class1"></div>
+  
+
+  <script>
+    const val = document.getElementById("val");
+    const col = document.getElementById("col");
+    const clz = document.getElementById("clz");
+    const box = document.getElementById("box");
+
+    const btn1 = document.getElementById("hide");
+    const btn2 = document.getElementById("show");
+    const btn3 = document.getElementById("toggle");
+
+
+    val.addEventListener("change", ()=>{
+      console.log(val.value);
+      box.style.width = val.value + "px";
+    });
+
+    col.addEventListener("change", ()=>{
+      console.log(col.value);
+      box.style.backgroundColor = col.value;
+    });
+
+    clz.addEventListener("change", ()=>{
+      console.log(clz.value);
+      box.className = clz.value;
+    }); 
+    
+    btn1.onclick = ()=>{
+      box.classList.add('hidden');
+      console.log("Hiding");
+    }
+    btn2.onclick = ()=>{
+      box.classList.remove('hidden');
+      console.log("Showing");
+    }    
+    btn3.onclick = ()=>{
+      box.classList.toggle('hidden');
+      console.log("Toggling");
+    }
+
+    let count = 0;
+    setInterval(()=>{
+      count++;
+      box.style.marginLeft = count + "px";
+    }, 1000);
+  </script>
+</body>
+</html>
