@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{
+      margin: 0;
+    }
+    .popupWindow{
+      width: 100%;
+      height: 100%;
+      background-color: rgba(37, 9, 163, 0.075);
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .popupBox{
+      width: 300px;
+      border: 1px solid rgba(0, 0, 255, 0.664);
+      border-radius: 8px;
+      padding: 32px;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .display{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      
+    }
+    .hide{
+      display: none;
+    }
+
+  </style>
+  
+</head>
+<body>
+  <div class="display">
+    <h2>My user Interface</h2>
+    <button id="myInput">Click Me</button>
+    <p id="nameTxt"></p>
+    <p id="ageTxt"></p>    
+  </div>
+
+  
+  <div id="popupWindow" class="popupWindow hide">
+    <div class="popupBox">
+      <h2>What is your name ?</h2>
+      <label for="nameInput"></label>
+      <input id="nameInput" type="text">
+      <input id="ageInput" type="number">
+      <div id="btnHolder">
+        <button id="okBtn">Ok</button>
+        <button id="closeBtn">Close</button>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <script>
+    const btn = document.getElementById("myInput");
+    const closeBtn = document.getElementById("closeBtn");
+    const okeBtn = document.getElementById("okBtn");
+    const nameTxt = document.getElementById("nameTxt");
+    const ageTxt = document.getElementById("ageTxt");
+    const popupWindow = document.getElementById("popupWindow");
+    const nameInput = document.getElementById("nameInput");
+    const ageInput = document.getElementById("ageInput");
+
+    btn.onclick = ()=>{
+      popupWindow.classList.remove("hide");
+
+    }
+    closeBtn.onclick = ()=>{
+      popupWindow.classList.add("hide");
+      nameInput.value = null;
+      ageInput.value = null;
+    }
+    okBtn.onclick = ()=>{
+      nameTxt.textContent = nameInput.value;
+      ageTxt.textContent = ageInput.value;
+    }
+
+  </script>
+  
+</body>
+</html>
